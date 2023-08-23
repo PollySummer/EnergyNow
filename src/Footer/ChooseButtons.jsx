@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 
 function ChooseButtons() {
-    const [choose, setChoosen] = useState(false);
+    const [choose, setChoosen] = useState();
 
     return (
         <>
