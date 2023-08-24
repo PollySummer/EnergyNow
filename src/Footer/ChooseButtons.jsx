@@ -1,6 +1,7 @@
+// //это был мой первый вариант решения задания, но он мне показался слишком громоздким,
+// //поэтому внизу второй вариант, заготовку которого я нашла на bootstrap-react  
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-
 function ChooseButtons() {
     const [choose, setChoosen] = useState();
 
@@ -60,3 +61,48 @@ function ChooseButtons() {
     );
 }
 export default ChooseButtons;
+//Нашла похожий компонент и сделала второй вариант решения, только он с radio buttons и через map
+// import { useState } from 'react';
+// import ButtonGroup from 'react-bootstrap/ButtonGroup';
+// import ToggleButton from 'react-bootstrap/ToggleButton';
+
+// function ChooseButtons() {
+
+//     const [radioValue, setRadioValue] = useState('1');
+
+//     const radios = [
+//         { name: '1', value: '1' },
+//         { name: '2', value: '2' },
+//         { name: '3', value: '3' },
+//         { name: '4', value: '4' },
+//         { name: '5', value: '5' },
+//         { name: '6', value: '6' },
+//         { name: '7', value: '7' },
+//         { name: '8', value: '8' },
+//     ];
+
+
+//     return (
+//         <>
+//             <div className='d-flex justify-content-center'>
+//                 <ButtonGroup>
+//                     {radios.map((radio, idx) => (
+//                         <ToggleButton
+//                             key={idx}
+//                             id={`radio-${idx}`}
+//                             type="radio"
+//                             variant={idx = 'outline-warning'}
+//                             value={radio.value}
+//                             checked={radioValue === radio.value}
+//                             onChange={(e) => setRadioValue(e.currentTarget.value)}
+//                         >
+//                             {radio.name}
+//                         </ToggleButton>
+//                     ))}
+//                 </ButtonGroup>
+//             </div>
+//         </>
+//     );
+// }
+
+// export default ChooseButtons;
