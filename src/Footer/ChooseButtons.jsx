@@ -83,7 +83,7 @@ function ChooseButtons() {
                     {radios.map((radio, idx) => (
                         <ToggleButton
                             key={idx}
-                            // id={`radio-${idx}`}
+                            id={`radio-${idx}`}
                             type="radio"
                             variant={idx = 'outline-warning'}
                             value={radio.value}
