@@ -22,13 +22,13 @@ const periods = [
     },
 ];
 
-function Periods() {
+function Periods({setShowSideBar}) {
     const [selected, setSelected] = useState(periods[0].label);
 
     return (
         <Container className='text-center my-2'>
             {
-                periods.map(({label}) =>
+                periods.map(({ label }) =>
                     <Button
                         className='mx-2'
                         key={label}
@@ -39,6 +39,14 @@ function Periods() {
                         {label}
                     </Button>)
             }
+
+            <Button
+                className='mx-2'
+                variant='primary'
+                onClick={ ()=>setShowSideBar(true)}
+            >
+                Custom
+            </Button>
         </Container>
     );
 }

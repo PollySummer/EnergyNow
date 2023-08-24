@@ -1,15 +1,15 @@
 import './app.scss';
 import Container from 'react-bootstrap/Container';
 import Navigation from './Navigation/Navigation';
-import Periods from './Footer/Periods';
 import Body from './Body';
+import Footer from './Footer';
 
 function App() {
   return (
     <Container>
       <Navigation />
       <Body />
-      <Periods />
+      <Footer />
     </Container>
   );
 }
