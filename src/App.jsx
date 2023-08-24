@@ -1,21 +1,16 @@
-import './App.scss';
+import './app.scss';
 import Container from 'react-bootstrap/Container';
 import Navigation from './Navigation/Navigation';
-import Header from './Body/Header';
-import Chart from './Body/Chart';
-import Dates from './Footer/Dates';
-import ChooseButtons from './Footer/ChooseButtons'
+import Periods from './Footer/Periods';
+import Body from './Body';
 
 function App() {
   return (
     <Container>
       <Navigation />
-      <Header />
-      <Chart/>
-      <Dates/>
-      <ChooseButtons/>
+      <Body />
+      <Periods />
     </Container>
-
   );
 }
 
