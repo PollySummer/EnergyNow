@@ -80,7 +80,7 @@ export default ChooseButtons;
 
 //     return (
 //         <>
-//             <div className='d-flex justify-content-center'>
+//             <div className='d-flex justify-content-center mb-5'>
 //                 <ButtonGroup>
 //                     {radios.map((radio, idx) => (
 //                         <ToggleButton
