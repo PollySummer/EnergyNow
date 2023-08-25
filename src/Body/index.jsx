@@ -1,9 +1,8 @@
 import Header from './Header';
-import Chart from './Chart';
 import { useState } from 'react';
-import {ELECTR} from './consts';
-
+import { ELECTR } from './consts';
 import './body.scss'
+import ShowTable from './ShowTable';
 
 function Body() {
     const [activeEnergy, setActiveEnergy] = useState(ELECTR);
@@ -11,7 +10,7 @@ function Body() {
         <>
             <Header activeEnergy={activeEnergy}
                 setActiveEnergy={setActiveEnergy} />
-            <Chart activeEnergy={activeEnergy}/>
+            <ShowTable />
         </>
     );
 }
