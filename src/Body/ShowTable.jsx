@@ -11,13 +11,17 @@ function ShowTable() {
     const chart = <Chart activeEnergy={activeEnergy} />;
 
     const [tableOrChart, setTableOrChart] = useState(false);
-    
+
     return (
         <>
             <Button onClick={() => setTableOrChart(true)}>
                 Table
             </Button>
+            <Button onClick={() => setTableOrChart(false)}>
+                Chart
+            </Button>
             {tableOrChart ? table : chart}
+
         </>
     );
 }
