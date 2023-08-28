@@ -22,7 +22,6 @@ function ShowTable() {
             <Button onClick={() => setTableOrChart(false)}>
                 Chart
             </Button>
-           
             </ButtonGroup>
             {tableOrChart ? table : chart}
         </>
