@@ -5,11 +5,14 @@ import { ELECTR } from './consts';
 import Chart from './Chart';
 import { ButtonGroup } from 'react-bootstrap';
 
-function ShowTable() {
-    const [activeEnergy, setActiveEnergy] = useState(ELECTR);
 
-    const table = <PriceTable />;
-    const chart = <Chart activeEnergy={activeEnergy} />;
+function ShowTable() {
+    const [activeEnergy] = useState(ELECTR);
+    const [electricityPrice, setElectricityPrice] = useState(null);
+    const [gasPrice, setGasPrice] = useState(null);
+
+    const table = <PriceTable electricityPrice={electricityPrice} gasPrice={gasPrice}/>;
+    const chart = <Chart electricityPrice={electricityPrice} activeEnergy={activeEnergy} gasPrice={gasPrice}/>;
 
     const [tableOrChart, setTableOrChart] = useState(false);
 

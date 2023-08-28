@@ -1,40 +1,18 @@
 import Button from 'react-bootstrap/Button';
-import { useState } from 'react';
 import { Container } from 'react-bootstrap';
-const periods = [
-    {
-        label: '1d',
-    },
-    {
-        label: '2d',
-    },
-    {
-        label: '3d',
-    },
-    {
-        label: '4d',
-    },
-    {
-        label: '6d',
-    },
-    {
-        label: '8d',
-    },
-];
-
-function Periods({setShowSideBar}) {
-    const [selected, setSelected] = useState(periods[0].label);
+import { PERIODS } from '../Body/consts';
+function Periods({ setShowSideBar, selectedPeriod, setSelectedPeriod }) {
 
     return (
         <Container className='text-center my-2'>
             {
-                periods.map(({ label }) =>
+                PERIODS.map(({ label,value }) =>
                     <Button
                         className='mx-2'
                         key={label}
                         variant='primary'
-                        active={selected === label}
-                        onClick={() => setSelected(label)}
+                        active={selectedPeriod === value}
+                        onClick={() => setSelectedPeriod(value)}
                     >
                         {label}
                     </Button>)
@@ -43,7 +21,7 @@ function Periods({setShowSideBar}) {
             <Button
                 className='mx-2'
                 variant='primary'
-                onClick={ ()=>setShowSideBar(true)}
+                onClick={() => setShowSideBar(true)}
             >
                 Custom
             </Button>
