@@ -11,7 +11,7 @@ function Body({ dataType, selectedPeriod }) {
     const [activeEnergy, setActiveEnergy] = useState(ELECTR);
     const [electricityPrice, setElectricityPrice] = useState(null);
     const [gasPrice, setGasPrice] = useState(null);
-    
+
     //если данные будут как-то меняться
     // useEffect(() => {
     //     console.log('fetch');
@@ -38,7 +38,11 @@ function Body({ dataType, selectedPeriod }) {
             <Header activeEnergy={activeEnergy}
                 setActiveEnergy={setActiveEnergy} />
             {/* {dataType==='chart' ? <Chart activeEnergy={activeEnergy}/> : <PriceTable/>} */}
-            <ShowTable/>
+            <ShowTable activeEnergy={activeEnergy}
+                electricityPrice={electricityPrice}
+                setElectricityPrice={setElectricityPrice}
+                gasPrice={gasPrice}
+                setGasPrice={setGasPrice} />
         </>
     );
 }
