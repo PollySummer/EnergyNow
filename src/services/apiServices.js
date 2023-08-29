@@ -8,7 +8,7 @@ export async function getElectricityPrice(selectedPeriod) {
 
     const params = new URLSearchParams({
         start,
-        end,
+        end: 'asdasd',
     });
 
     //await для ожидания ответа с сервера. fetch делает запрос (перед фетч всегда авейт, потом генерируем ссылку)

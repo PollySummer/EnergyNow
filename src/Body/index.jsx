@@ -1,17 +1,18 @@
-import Header from './Header';
 import { useState, useEffect } from 'react';
+import Header from './Header';
 import { ELECTR } from './consts';
 import './body.scss'
 import ShowTable from './ShowTable';
+import { getElectricityPrice, getGasPrice } from '../services/apiServices';
+import ErrorModal from './ErrorModal';
 // import Chart from './Chart';
 // import PriceTable from './PriceTable';
-import { getElectricityPrice, getGasPrice } from '../services/apiServices';
 
-function Body({ dataType, selectedPeriod }) {
+function Body({ selectedPeriod }) {
     const [activeEnergy, setActiveEnergy] = useState(ELECTR);
     const [electricityPrice, setElectricityPrice] = useState(null);
     const [gasPrice, setGasPrice] = useState(null);
-
+    const [errorMessage, setErrorMessage] = useState(null);
     //если данные будут как-то меняться
     // useEffect(() => {
     //     console.log('fetch');
@@ -22,27 +23,41 @@ function Body({ dataType, selectedPeriod }) {
     //     console.log('fetch');
     // }, []);
     useEffect(() => {
+
         getElectricityPrice(selectedPeriod).then(data => {
-            console.log(data);
+            console.log('ele', data);
+            if (!data.success) {
+                throw data.messages[0];
+            }
             setElectricityPrice(data.data);
 
         })
+            .catch(setErrorMessage);
         getGasPrice(selectedPeriod).then(data => {
             console.log('gas', data);
+            if (!data.success) {
+                throw data.messages[0];
+            }
             setGasPrice(data.data);
         })
+            .catch(setErrorMessage); //для then
+
     }, [selectedPeriod]);
 
     return (
         <>
             <Header activeEnergy={activeEnergy}
                 setActiveEnergy={setActiveEnergy} />
-            {/* {dataType==='chart' ? <Chart activeEnergy={activeEnergy}/> : <PriceTable/>} */}
+
             <ShowTable activeEnergy={activeEnergy}
                 electricityPrice={electricityPrice}
                 setElectricityPrice={setElectricityPrice}
                 gasPrice={gasPrice}
                 setGasPrice={setGasPrice} />
+
+            <ErrorModal errorMessage={errorMessage} handleClose={() => setErrorMessage(null)} />
+
+            {/* {dataType==='chart' ? <Chart activeEnergy={activeEnergy}/> : <PriceTable/>} */}
         </>
     );
 }
