@@ -4,7 +4,7 @@ import PriceTable from './PriceTable';
 import Chart from './Chart';
 import { ButtonGroup } from 'react-bootstrap';
 
-
+// {activeEnergy, electricityPrice,setElectricityPrice,gasPrice,setGasPrice}
 function ShowTable(props) {
     const table = <PriceTable {...props} />;
     const chart = <Chart {...props} />;
