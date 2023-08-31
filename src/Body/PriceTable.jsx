@@ -1,14 +1,15 @@
 import Table from 'react-bootstrap/Table';
 import moment from 'moment';
+import { NOW_TIMESTAMP,ELECTR,GAS } from './consts';
 
-function PriceTable({ electricityPrice }) {
+function PriceTable({ electricityPrice}) {
 
     const data = electricityPrice?.ee.map((priceEE, index) => {
         return {
             ee: priceEE,
             lv: electricityPrice?.lv[index],
             fi: electricityPrice?.fi[index],
-            lt: electricityPrice?.lt[index],
+            lt: electricityPrice?.lt[index]
         }
     });
 
@@ -26,19 +27,16 @@ function PriceTable({ electricityPrice }) {
             </thead>
             <tbody>
                 {data.map(({ ee, lt, lv, fi }, index) => {
-                    const rowDate = moment.unix(ee.timestamp).startOf('hour').format('DD.MM.YYYY HH:mm:ss');
+                    const rowDate = moment.unix(ee.timestamp).format('DD.MM.YYYY HH:mm:ss');
                     const now = moment().startOf('hour').format('DD.MM.YYYY HH:mm:ss');
-                    console.log(now);
-                    console.log('***');
-                    console.log(rowDate);
                     return (
                         <tr key={index} >
                             <td>{index}</td>
                             <td style={{ backgroundColor: rowDate === now ? 'red' : '' }}>{rowDate}</td>
-                            <td>{ee.price}</td>
-                            <td>{fi.price}</td>
-                            <td>{lt.price}</td>
-                            <td>{lv.price}</td>
+                            <td>{ee?.price}</td>
+                            <td>{fi?.price}</td>
+                            <td>{lt?.price}</td>
+                            <td>{lv?.price}</td>
                         </tr>
                     );
                 })}

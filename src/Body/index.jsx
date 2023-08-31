@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import { ELECTR } from './consts';
 import './body.scss'
 import ShowTable from './ShowTable';
 import { getElectricityPrice, getGasPrice } from '../services/apiServices';
@@ -8,8 +7,8 @@ import ErrorModal from './ErrorModal';
 // import Chart from './Chart';
 // import PriceTable from './PriceTable';
 
-function Body({ selectedPeriod }) {
-    const [activeEnergy, setActiveEnergy] = useState(ELECTR);
+function Body({ selectedPeriod,activeEnergy,setActiveEnergy }) {
+
     const [electricityPrice, setElectricityPrice] = useState(null);
     const [gasPrice, setGasPrice] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
@@ -47,7 +46,8 @@ function Body({ selectedPeriod }) {
     return (
         <>
             <Header activeEnergy={activeEnergy}
-                setActiveEnergy={setActiveEnergy} />
+                setActiveEnergy={setActiveEnergy}
+                electricityPrice={electricityPrice} />
 
             <ShowTable activeEnergy={activeEnergy}
                 electricityPrice={electricityPrice}

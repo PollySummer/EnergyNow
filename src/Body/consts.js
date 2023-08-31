@@ -1,15 +1,25 @@
+import moment from "moment";
+
 export const ELECTR = 'electricity';
 export const GAS = 'gas';
 
 export const CHART = 'chart';
 export const TABLE = 'table';
+export const LOW_ELE_PRICE = 120;
+export const NOW_TIMESTAMP = moment().startOf('hour').unix();
+
+const label = {
+    [ELECTR]: 'days',
+    [GAS]: 'months',
+};
+
 export const PERIODS = [
     {
-        label: '1d',
+        label,
         value: 1,
     },
     {
-        label: '2d',
+        label,
         value: 2,
     }
 ];

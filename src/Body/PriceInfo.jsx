@@ -1,14 +1,16 @@
 import Badge from 'react-bootstrap/Badge';
+import { NOW_TIMESTAMP } from './consts';
+import { LOW_ELE_PRICE } from './consts';
+function PriceInfo({ electricityPrice }) {
 
-const price = 'low';
-
-function PriceInfo() {
-
+    const currentPrice = electricityPrice?.ee.find(item => item.timestamp === NOW_TIMESTAMP);
+    
     return (
         <>
             <h3>Price is: </h3>
-            {/* если цена - низкая ? значит "то" лоу : это вместо елс*/}
-            {price === 'low' ? <Badge bg="success">Low</Badge> : <Badge bg="danger">Hight</Badge>}
+            {currentPrice?.price <= LOW_ELE_PRICE ?
+                <Badge bg="success">Low</Badge> :
+                <Badge bg="danger">Hight</Badge>}
         </>
     );
 }
