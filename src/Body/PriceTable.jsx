@@ -26,14 +26,15 @@ function PriceTable({ electricityPrice }) {
             </thead>
             <tbody>
                 {data.map(({ ee, lt, lv, fi }, index) => {
-                    const rowDate = moment.unix(ee.timestamp).format('DD.MM.YYYY HH:mm:ss');
-                    const now = moment().format('DD.MM.YYYY HH:mm:ss');
+                    const rowDate = moment.unix(ee.timestamp).startOf('hour').format('DD.MM.YYYY HH:mm:ss');
+                    const now = moment().startOf('hour').format('DD.MM.YYYY HH:mm:ss');
                     console.log(now);
-                    
+                    console.log('***');
+                    console.log(rowDate);
                     return (
                         <tr key={index} >
                             <td>{index}</td>
-                            <td style={{ backgroundColor: rowDate === now ? 'yellow' : '' }}>{rowDate}</td>
+                            <td style={{ backgroundColor: rowDate === now ? 'red' : '' }}>{rowDate}</td>
                             <td>{ee.price}</td>
                             <td>{fi.price}</td>
                             <td>{lt.price}</td>
