@@ -2,6 +2,7 @@ import Table from 'react-bootstrap/Table';
 import moment from 'moment';
 
 function PriceTable({ electricityPrice }) {
+
     const data = electricityPrice?.ee.map((priceEE, index) => {
         return {
             ee: priceEE,
@@ -24,17 +25,23 @@ function PriceTable({ electricityPrice }) {
                 </tr>
             </thead>
             <tbody>
-                {data.map(({ ee, lt, lv, fi }, index) => (
-                    <tr key={index}>
-                        <td>{index}</td>
-                        <td>{moment.unix(ee.timestamp).format('DD.MM.YYYY HH:mm:ss')}</td>
-                        <td>{ee.price}</td>
-                        <td>{fi.price}</td>
-                        <td>{lt.price}</td>
-                        <td>{lv.price}</td>
-                    </tr>
-                )
-                )}
+                {data.map(({ ee, lt, lv, fi }, index) => {
+                    const rowDate = moment.unix(ee.timestamp).format('DD.MM.YYYY HH:mm:ss');
+                    const now = moment().format('DD.MM.YYYY HH:mm:ss');
+                    console.log(now);
+                    
+                    return (
+                        <tr key={index} >
+                            <td>{index}</td>
+                            <td style={{ backgroundColor: rowDate === now ? 'yellow' : '' }}>{rowDate}</td>
+                            <td>{ee.price}</td>
+                            <td>{fi.price}</td>
+                            <td>{lt.price}</td>
+                            <td>{lv.price}</td>
+                        </tr>
+                    );
+                })}
+
             </tbody>
         </Table>
     );
