@@ -1,6 +1,9 @@
-.chartsContainer{
+$priceColor: red;
+
+.chartsContainer {
     height: 500px;
 }
-.now{
-    background-color: red;
+
+.now > td {
+    background-color: $priceColor;
 }

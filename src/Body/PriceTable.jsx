@@ -78,7 +78,6 @@ function PriceTable({ electricityPrice, activeEnergy, gasPrice }) {
                         </tr>
                     );
                 })}
-
             </tbody>
         </Table>
     );
