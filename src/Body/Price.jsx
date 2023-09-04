@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-import { NOW_TIMESTAMP } from "./consts";
+import { ELECTR, NOW_TIMESTAMP } from "./consts";
 
 
-function Price({ electricityPrice }) {
+function Price({ electricityPrice, gasCurrentPrice, activeEnergy }) {
+
     const [currentPrice, setCurrentPrice] = useState(0);
+
     useEffect(() => {
         if (!electricityPrice) return;
         const { price } = electricityPrice?.ee.find(item => item.timestamp === NOW_TIMESTAMP);
@@ -13,7 +15,7 @@ function Price({ electricityPrice }) {
 
     return (
         <>
-            <h3>{currentPrice}</h3>
+            <h3>{activeEnergy === ELECTR ? currentPrice : gasCurrentPrice}</h3>
             <div>sents/kw</div>
         </>
     )

@@ -29,3 +29,11 @@ export async function getGasPrice(selectedPeriod) {
     const responce = await fetch(`${apiUrl}/gas-trade?${params}`);
     return await responce.json();
 }
+
+
+export async function getCurrentGasPrice() {
+    const country = 'EE';
+    const responce = await fetch(`${apiUrl}/gas-trade/${country}/latest`);
+    
+    return await responce.json();
+}

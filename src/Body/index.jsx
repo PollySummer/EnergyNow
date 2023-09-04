@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import './body.scss'
 import ShowTable from './ShowTable';
-import { getElectricityPrice, getGasPrice } from '../services/apiServices';
+import { getElectricityPrice, getGasPrice, getCurrentGasPrice } from '../services/apiServices';
 import ErrorModal from './ErrorModal';
 // import Chart from './Chart';
 // import PriceTable from './PriceTable';
@@ -12,6 +12,7 @@ function Body({ selectedPeriod, activeEnergy, setActiveEnergy }) {
     const [electricityPrice, setElectricityPrice] = useState(null);
     const [gasPrice, setGasPrice] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [gasCurrentPrice, setGasCurrentPrice] = useState(0);
     //если данные будут как-то меняться
     // useEffect(() => {
     //     console.log('fetch');
@@ -44,11 +45,24 @@ function Body({ selectedPeriod, activeEnergy, setActiveEnergy }) {
 
     }, [selectedPeriod]);
 
+
+    useEffect(() => {
+        getCurrentGasPrice().then(data => {
+            console.log('current gas', data);
+            if (!data.success) {
+                throw data.messages[0];
+            }
+            setGasCurrentPrice(data.data[0].price);
+        })
+            .catch(setErrorMessage);
+    }, []);
+
     return (
         <>
             <Header activeEnergy={activeEnergy}
                 setActiveEnergy={setActiveEnergy}
                 electricityPrice={electricityPrice}
+                gasCurrentPrice={gasCurrentPrice}
             />
 
             <ShowTable activeEnergy={activeEnergy}
