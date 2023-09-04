@@ -1,34 +1,38 @@
 import { useEffect, useState } from "react";
-import { NOW_TIMESTAMP } from "./consts";
-import { ELECTR, GAS } from "./consts";
+import { NOW_TIMESTAMP, ELECTR, GAS } from "./consts";
 
-function Price({ electricityPrice, latestGasPrice, activeEnergy }) {
-    const [currentElectrPrice, setCurrentElectrPrice] = useState(0);
+
+function Price({ electricityPrice, activeEnergy, latestGasPrice }) {
+    const [currentElectrPrice, setCurrentElecrPrice] = useState(0);
     const [currentGasPrice, setCurrentGasPrice] = useState(0);
 
     useEffect(() => {
+        if (!electricityPrice || !latestGasPrice) return;
+
         const energy = {
             [ELECTR]: {
-                data: electricityPrice?.ee,
+                data: electricityPrice.ee,
             },
             [GAS]: {
-                data: latestGasPrice
+                data: latestGasPrice,
             },
         }
 
-        if (!electricityPrice || !latestGasPrice) return;
-
-        const mainData = energy[activeEnergy].data.map((item) => ({
-            ...item,
-        }));
-
+        const mainData = energy[activeEnergy].data.map((data) =>
+        ({
+            ...data,
+        })
+        )
         if (activeEnergy === ELECTR) {
-            setCurrentElectrPrice(mainData);
+            setCurrentElecrPrice(mainData);
+
         } else if (activeEnergy === GAS) {
             setCurrentGasPrice(mainData);
         }
+        console.log(mainData);
 
     }, [electricityPrice, latestGasPrice, activeEnergy]);
+
 
     // useEffect(() => {
     //     if (!electricityPrice) return;
