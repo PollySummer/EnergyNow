@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { NOW_TIMESTAMP } from "./consts";
 
 
-function Price({ electricityPrice}) {
+function Price({ electricityPrice }) {
     const [currentPrice, setCurrentPrice] = useState(0);
-   useEffect(() => {
+    useEffect(() => {
         if (!electricityPrice) return;
         const { price } = electricityPrice?.ee.find(item => item.timestamp === NOW_TIMESTAMP);
         setCurrentPrice(price);
