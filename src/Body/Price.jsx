@@ -29,7 +29,6 @@ function Price({ electricityPrice, activeEnergy, latestGasPrice }) {
         } else if (activeEnergy === GAS) {
             setCurrentGasPrice(mainData);
         }
-        console.log(mainData);
 
     }, [electricityPrice, latestGasPrice, activeEnergy]);
 
