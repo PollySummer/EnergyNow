@@ -21,23 +21,33 @@ function DateForm({ setElectricityPrice,
         const to = event.target.to.value;
 
         try {
-            const dataElectr = await getElectricityPrice({ to, from });
-            if (!dataElectr.success) {
-                throw dataElectr.messages[0];
-            }
+            const [dataElectr, dataGas] = await Promise.all([
+                getElectricityPrice({ to, from }),
+                getGasPrice({ to, from })
+            ]);
 
+            if (![dataElectr, dataGas].find(data => data.success)) {
+                throw (dataElectr || dataGas).messages[0];
+            }
             setElectricityPrice(dataElectr.data);
-            const dataGas = await getGasPrice({ to, from });
-            if (!dataGas.success) {
-                throw dataGas.messages[0];
-            }
             setGasPrice(dataGas.data);
+            // const dataElectr = await getElectricityPrice({ to, from });
+            // if (!dataElectr.success) {
+            //     throw dataElectr.messages[0];
+            // }
 
-            const dataCurrent = await getCurrentGasPrice();
-            if (!dataCurrent.success) {
-                throw dataCurrent.messages[0];
-            }
-            setGasCurrentPrice(dataCurrent.data[0].price);
+            // setElectricityPrice(dataElectr.data);
+            // const dataGas = await getGasPrice({ to, from });
+            // if (!dataGas.success) {
+            //     throw dataGas.messages[0];
+            // }
+            // setGasPrice(dataGas.data);
+
+            // const dataCurrent = await getCurrentGasPrice();
+            // if (!dataCurrent.success) {
+            //     throw dataCurrent.messages[0];
+            // }
+            // setGasCurrentPrice(dataCurrent.data[0].price);
         } catch (error) {
             setErrorMessage(error);
         }
