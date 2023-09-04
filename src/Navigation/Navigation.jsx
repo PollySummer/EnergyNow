@@ -13,7 +13,7 @@ function Navigation() {
                         height="30"
                         className="d-inline-block align-top"
                     />{' '}
-                    React Bootstrap
+                    Energy today
                 </Navbar.Brand>
             </Container>
         </Navbar>

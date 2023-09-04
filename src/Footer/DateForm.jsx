@@ -6,7 +6,8 @@ import { getElectricityPrice, getGasPrice, getCurrentGasPrice } from '../service
 
 function DateForm({ setElectricityPrice,
     setGasPrice,
-    setGasCurrentPrice }) {
+    setGasCurrentPrice,
+    hideSideBar }) {
 
     const [errorMessage, setErrorMessage] = useState(null);
 
@@ -41,6 +42,7 @@ function DateForm({ setElectricityPrice,
             setErrorMessage(error);
         }
         console.log(from, to);
+        hideSideBar();
     };
 
     return (

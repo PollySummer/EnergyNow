@@ -8,7 +8,7 @@ function Sidebar({ show, handleClose, ...props }) {
                 <Offcanvas.Title>Date Search</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-                <DateForm {...props}/>
+                <DateForm {...props} hideSideBar={handleClose}/>
             </Offcanvas.Body>
         </Offcanvas>
     );
