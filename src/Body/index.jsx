@@ -7,12 +7,13 @@ import ErrorModal from './ErrorModal';
 // import Chart from './Chart';
 // import PriceTable from './PriceTable';
 
-function Body({ selectedPeriod, activeEnergy, setActiveEnergy }) {
+function Body({ selectedPeriod,
+    activeEnergy, setActiveEnergy,
+    electricityPrice, setElectricityPrice,
+    gasPrice, setGasPrice,
+    gasCurrentPrice, setGasCurrentPrice }) {
 
-    const [electricityPrice, setElectricityPrice] = useState(null);
-    const [gasPrice, setGasPrice] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
-    const [gasCurrentPrice, setGasCurrentPrice] = useState(0);
     //если данные будут как-то меняться
     // useEffect(() => {
     //     console.log('fetch');
@@ -24,7 +25,7 @@ function Body({ selectedPeriod, activeEnergy, setActiveEnergy }) {
     // }, []);
     useEffect(() => {
 
-        getElectricityPrice(selectedPeriod).then(data => {
+        getElectricityPrice({selectedPeriod}).then(data => {
             console.log('ele', data);
             if (!data.success) {
                 throw data.messages[0];
@@ -34,7 +35,7 @@ function Body({ selectedPeriod, activeEnergy, setActiveEnergy }) {
         })
             .catch(setErrorMessage);
 
-        getGasPrice(selectedPeriod).then(data => {
+        getGasPrice({selectedPeriod}).then(data => {
             console.log('gas', data);
             if (!data.success) {
                 throw data.messages[0];
@@ -43,7 +44,7 @@ function Body({ selectedPeriod, activeEnergy, setActiveEnergy }) {
         })
             .catch(setErrorMessage); //для then
 
-    }, [selectedPeriod]);
+    }, [selectedPeriod, setGasPrice, setElectricityPrice]);
 
 
     useEffect(() => {
@@ -55,7 +56,7 @@ function Body({ selectedPeriod, activeEnergy, setActiveEnergy }) {
             setGasCurrentPrice(data.data[0].price);
         })
             .catch(setErrorMessage);
-    }, []);
+    }, [setGasCurrentPrice]);
 
     return (
         <>

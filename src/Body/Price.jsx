@@ -8,14 +8,14 @@ function Price({ electricityPrice, gasCurrentPrice, activeEnergy }) {
 
     useEffect(() => {
         if (!electricityPrice) return;
-        const { price } = electricityPrice?.ee.find(item => item.timestamp === NOW_TIMESTAMP);
-        setCurrentPrice(price);
+        const current = electricityPrice?.ee.find(item => item.timestamp === NOW_TIMESTAMP);
+        setCurrentPrice(current?.price || 0);
     }, [electricityPrice]);
 
 
     return (
         <>
-            <h3>{activeEnergy === ELECTR ? currentPrice : gasCurrentPrice}</h3>
+            <h3>{activeEnergy === ELECTR ? currentPrice : parseFloat(gasCurrentPrice).toFixed(2)}</h3>
             <div>sents/kw</div>
         </>
     )
