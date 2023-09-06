@@ -29,7 +29,6 @@ function Body() {
                 throw data.messages[0];
             }
             dispatch(setElectricityPrice(data.data));
-
         })
             .catch(setErrorMessage);
 
