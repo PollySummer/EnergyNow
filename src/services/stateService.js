@@ -34,5 +34,5 @@ const reducer = createReducer(initialState, (builder) => {
         })
 });
 
-
+//создаем облачко для хранения данных
 export const store = configureStore({ reducer });

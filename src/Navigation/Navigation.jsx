@@ -13,7 +13,7 @@ function Navigation() {
                         height="30"
                         className="d-inline-block align-top"
                     />{' '}
-                    Energy today
+                    EnergyToday
                 </Navbar.Brand>
             </Container>
         </Navbar>

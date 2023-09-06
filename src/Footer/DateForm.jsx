@@ -5,10 +5,12 @@ import ErrorModal from '../Body/ErrorModal';
 import { getElectricityPrice, getGasPrice } from '../services/apiServices';
 import { setElectricityPrice, setGasPrice } from '../services/stateService';
 import { useDispatch } from 'react-redux';
+
 function DateForm({ hideSideBar }) {
 
     const [errorMessage, setErrorMessage] = useState(null);
     const dispatch = useDispatch();
+
     const handleSubmit = async (event) => {
         //убрать стандартное поведение формы
         //target - с кем произошло событие и инпуты (что ввел пользователь)
