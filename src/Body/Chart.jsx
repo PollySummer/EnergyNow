@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import moment from 'moment';
 import { ELECTR, GAS, NOW_TIMESTAMP } from './consts';
+import { useSelector } from 'react-redux';
 import {
     LineChart, Line, XAxis,
     YAxis, CartesianGrid, Tooltip,
@@ -8,7 +9,10 @@ import {
     ReferenceLine
 } from 'recharts';
 
-function Chart({ electricityPrice, activeEnergy, gasPrice }) {
+function Chart() {
+    const electricityPrice = useSelector((state) => state.electricityPrice);
+    const gasPrice = useSelector((state) => state.gasPrice);
+    const activeEnergy = useSelector((state) => state.activeEnergy);
     const [chartData, setChartData] = useState([]);
 
     useEffect(() => {
@@ -27,11 +31,7 @@ function Chart({ electricityPrice, activeEnergy, gasPrice }) {
 
         const data = energy[activeEnergy].data.map(data =>
         ({
-            ...data,
-            interval:
-                moment.
-                    unix(data.timestamp).
-                    format(energy[activeEnergy].format)
+            ...data, interval: moment.unix(data.timestamp).format(energy[activeEnergy].format)
         })
         )
         setChartData(data);

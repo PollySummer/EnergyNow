@@ -2,15 +2,13 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import ErrorModal from '../Body/ErrorModal';
-import { getElectricityPrice, getGasPrice, getCurrentGasPrice } from '../services/apiServices';
-
-function DateForm({ setElectricityPrice,
-    setGasPrice,
-    setGasCurrentPrice,
-    hideSideBar }) {
+import { getElectricityPrice, getGasPrice } from '../services/apiServices';
+import { setElectricityPrice, setGasPrice } from '../services/stateService';
+import { useDispatch } from 'react-redux';
+function DateForm({ hideSideBar }) {
 
     const [errorMessage, setErrorMessage] = useState(null);
-
+    const dispatch = useDispatch();
     const handleSubmit = async (event) => {
         //убрать стандартное поведение формы
         //target - с кем произошло событие и инпуты (что ввел пользователь)
@@ -29,25 +27,8 @@ function DateForm({ setElectricityPrice,
             if (![dataElectr, dataGas].find(data => data.success)) {
                 throw (dataElectr || dataGas).messages[0];
             }
-            setElectricityPrice(dataElectr.data);
-            setGasPrice(dataGas.data);
-            // const dataElectr = await getElectricityPrice({ to, from });
-            // if (!dataElectr.success) {
-            //     throw dataElectr.messages[0];
-            // }
-
-            // setElectricityPrice(dataElectr.data);
-            // const dataGas = await getGasPrice({ to, from });
-            // if (!dataGas.success) {
-            //     throw dataGas.messages[0];
-            // }
-            // setGasPrice(dataGas.data);
-
-            // const dataCurrent = await getCurrentGasPrice();
-            // if (!dataCurrent.success) {
-            //     throw dataCurrent.messages[0];
-            // }
-            // setGasCurrentPrice(dataCurrent.data[0].price);
+            dispatch(setElectricityPrice(dataElectr.data));
+            dispatch(setGasPrice(dataGas.data));
         } catch (error) {
             setErrorMessage(error);
         }

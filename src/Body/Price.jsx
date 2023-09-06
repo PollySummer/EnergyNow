@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { ELECTR, NOW_TIMESTAMP } from "./consts";
+import { useSelector } from 'react-redux';
 
-
-function Price({ electricityPrice, gasCurrentPrice, activeEnergy }) {
-
+function Price() {
+    const electricityPrice = useSelector((state) => state.electricityPrice);
+    const activeEnergy = useSelector((state) => state.activeEnergy);
+    const gasCurrentPrice = useSelector((state) => state.gasCurrentPrice);
     const [currentPrice, setCurrentPrice] = useState(0);
 
     useEffect(() => {

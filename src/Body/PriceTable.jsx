@@ -2,18 +2,14 @@ import Table from 'react-bootstrap/Table';
 import moment from 'moment';
 import { NOW_TIMESTAMP, ELECTR, GAS } from './consts';
 import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-function PriceTable({ electricityPrice, activeEnergy, gasPrice }) {
+function PriceTable() {
     const [tableData, setTableData] = useState([]);
+    const electricityPrice = useSelector((state) => state.electricityPrice);
+    const gasPrice = useSelector((state) => state.gasPrice);
+    const activeEnergy = useSelector((state) => state.activeEnergy);
 
-    // const data = electricityPrice?.ee.map((priceEE, index) => {
-    //     return {
-    //         ee: priceEE,
-    //         lv: electricityPrice?.lv[index],
-    //         fi: electricityPrice?.fi[index],
-    //         lt: electricityPrice?.lt[index]
-    //     }
-    // });
     useEffect(() => {
         if (!electricityPrice || !gasPrice) return;
 
