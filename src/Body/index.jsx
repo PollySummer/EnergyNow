@@ -24,6 +24,7 @@ function Body() {
     useEffect(() => {
 
         getElectricityPrice({ selectedPeriod }).then(data => {
+            console.log('ele');
             if (!data.success) {
                 throw data.messages[0];
             }
@@ -33,6 +34,7 @@ function Body() {
             .catch(setErrorMessage);
 
         getGasPrice({ selectedPeriod }).then(data => {
+            console.log('gas');
             if (!data.success) {
                 throw data.messages[0];
             }
