@@ -9,10 +9,9 @@ function App() {
   return (
     <Container>
       <Navigation />
-      <Body
-      />
-      <ErrorModal />
+      <Body />
       <Footer />
+      <ErrorModal />
     </Container>
   );
 }
