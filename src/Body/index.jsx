@@ -1,20 +1,19 @@
-import { useState, useEffect } from 'react';
+import {useEffect } from 'react';
 import Header from './Header';
 import './body.scss'
 import ShowTable from './ShowTable';
 import { getElectricityPrice, getGasPrice, getCurrentGasPrice } from '../services/apiServices';
-import ErrorModal from './ErrorModal';
+
 import {
     setElectricityPrice, setGasPrice,
-    setActiveEnergy, setGasCurrentPrice
+    setActiveEnergy, setGasCurrentPrice,
+    setErrorMessage
 } from '../services/stateService';
 import { useSelector, useDispatch } from 'react-redux';
 
 
 
 function Body() {
-
-    const [errorMessage, setErrorMessage] = useState(null);
     const gasPrice = useSelector((state) => state.gasPrice);
     const activeEnergy = useSelector((state) => state.activeEnergy);
     const selectedPeriod = useSelector((state) => state.selectedPeriod);
@@ -30,7 +29,7 @@ function Body() {
             }
             dispatch(setElectricityPrice(data.data));
         })
-            .catch(setErrorMessage);
+            .catch((error) => dispatch(setErrorMessage(error)));
 
         getGasPrice({ selectedPeriod }).then(data => {
             console.log('gas');
@@ -39,7 +38,7 @@ function Body() {
             }
             dispatch(setGasPrice(data.data));
         })
-            .catch(setErrorMessage); //для then
+            .catch((error) => dispatch(setErrorMessage(error))); //для then
 
     }, [selectedPeriod, dispatch]);
 
@@ -52,7 +51,7 @@ function Body() {
             }
             dispatch(setGasCurrentPrice(data.data[0].price));
         })
-            .catch(setErrorMessage);
+            .catch((error) => dispatch(setErrorMessage(error)));
     }, [dispatch]);
 
     return (
@@ -67,7 +66,7 @@ function Body() {
                 setGasPrice={setGasPrice}
             />
 
-            <ErrorModal errorMessage={errorMessage} handleClose={() => setErrorMessage(null)} />
+
 
         </>
     );

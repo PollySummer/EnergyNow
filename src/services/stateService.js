@@ -6,7 +6,8 @@ const initialState = {
     gasPrice: null,
     activeEnergy: ELECTR,
     selectedPeriod: PERIODS[0].value,
-    gasCurrentPrice: 0
+    gasCurrentPrice: 0,
+    errorMessage: null,
 }
 
 export const setElectricityPrice = createAction('setElectricityPrice');
@@ -14,6 +15,7 @@ export const setGasPrice = createAction('setGasPrice');
 export const setActiveEnergy = createAction('setActiveEnergy');
 export const setSelectedPeriod = createAction('setSelectedPeriod');
 export const setGasCurrentPrice = createAction('setGasCurrentPrice');
+export const setErrorMessage = createAction('setErrorMessage');
 
 const reducer = createReducer(initialState, (builder) => {
     builder
@@ -31,6 +33,9 @@ const reducer = createReducer(initialState, (builder) => {
         })
         .addCase(setGasCurrentPrice, (state, action) => {
             state.gasCurrentPrice = action.payload;
+        })
+        .addCase(setErrorMessage, (state, action) => {
+            state.errorMessage = action.payload;
         })
 });
 
