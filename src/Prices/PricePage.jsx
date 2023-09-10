@@ -15,39 +15,20 @@ function PricePage() {
         setCurrentPrice(price);
     }, [electricityPrice, pathname]);
 
+    const electricityWithTax = currentPrice + (currentPrice / 100) * 20;
+    const gasPriceWithTax = (gasCurrentPrice + (gasCurrentPrice / 100) * 20);
 
-    if (pathname === '/PricePage/kw') {
-        return (
-            <>
-                <h2>Electricity price with tax: </h2>
-                <h2>{(currentPrice + (currentPrice / 100) * 20)}</h2>
-                <div>sents/kw</div>
-                <h2>Gas price with tax: </h2>
-                <h2>{(gasCurrentPrice + (gasCurrentPrice / 100) * 20)}</h2>
-            </>
-        )
-    } else {
-        return (
-            <>
-                <h2>Electricity normal price</h2>
-                <h2>{currentPrice}</h2>
-                <div>sents/kw</div>
-                <h2>Gas normal price</h2>
-                <h2>{parseFloat(gasCurrentPrice).toFixed(2)}</h2>
-            </>
-        )
 
-    }
-
-    // return (
-    //     <>
-    //         <h2>Electricity</h2>
-    //         <h2>{currentPrice}</h2>
-    //         <div>sents/kw</div>
-    //         <h2>Gas</h2>
-    //         <h2>{parseFloat(gasCurrentPrice).toFixed(2)}</h2>
-    //     </>
-    // )
+    return (
+        <>
+            <h2>{pathname === '/PricePage/kw' ? 'Electricity price with tax:' : 'Electricity normal price'}</h2>
+            <h2>{electricityWithTax}</h2>
+            <div>sents/kw</div>
+            <h2>{pathname === '/PricePage/kw' ? 'Gas price with tax:' : 'Gas normal price'}</h2>
+            <h2>{pathname === '/PricePage/kw' ? gasPriceWithTax : gasCurrentPrice}</h2>
+            <div>m³</div>
+        </>
+    )
 }
 
 
