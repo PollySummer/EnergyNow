@@ -5,6 +5,7 @@ import Body from './Body';
 import Footer from './Footer';
 import ErrorModal from './ErrorModal';
 import Contact from './Contact';
+import PricePage from './Prices/PricePage';
 import { Routes, Route } from 'react-router-dom';
 import useGetData from './effects/useGetData';
 
@@ -28,6 +29,8 @@ function App() {
         <Route path="/gas/:dataType" element={mainPage} />
         <Route path="/electricity" element={mainPage} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/PricePage" element={<PricePage />} />
+        <Route path="/PricePage/kw" element={<PricePage />} />
       </Routes>
       <ErrorModal />
     </Container>

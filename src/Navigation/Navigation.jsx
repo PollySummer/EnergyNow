@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 
 function Navigation() {
     return (
-        <Navbar className="bg-body-tertiary">
+        <Navbar className="bg-body-tertiary ">
             <Container>
                 <Link to='/' className='navbar-brand'>
-
                     <img
                         alt=""
                         src="/logo.svg"
@@ -17,8 +16,8 @@ function Navigation() {
                     />{' '}
                     EnergyToday
                     </Link>
-                <Link className='nav-link' to="/contact">Contact</Link>
-                <Link className='nav-link' to="/gas">Gas</Link>
+                <Link className='nav-link' to="/contact">About me</Link>
+                <Link className='nav-link' to="/PricePage">Current price</Link>
             </Container>
         </Navbar>
     );
