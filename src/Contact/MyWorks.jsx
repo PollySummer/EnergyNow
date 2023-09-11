@@ -8,7 +8,7 @@ function MyWorks() {
                 <Carousel.Item>
                     <img
                         className="d-block w-40 m-auto"
-                        src="https://picsum.photos/800/400"
+                        src="myWork1.png"
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -19,7 +19,7 @@ function MyWorks() {
                 <Carousel.Item>
                     <img
                         className="d-block w-20 m-auto"
-                        src="https://picsum.photos/800/400"
+                        src="myWork2.png"
                         alt="Second slide"
                     />
                     <Carousel.Caption>
@@ -30,7 +30,7 @@ function MyWorks() {
                 <Carousel.Item>
                     <img
                         className="d-block w-20 m-auto"
-                        src="https://picsum.photos/800/400"
+                        src="myWork3.png"
                         alt="Third slide"
                     />
                     <Carousel.Caption>
