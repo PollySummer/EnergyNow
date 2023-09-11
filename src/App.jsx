@@ -35,6 +35,11 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/PricePage" element={<PricePage />} />
         <Route path="/PricePage/kw" element={<PricePage />} />
+        {/* что бы не переиспользовать PricePage второй раз
+        потом в pricePage принять {kw} и также через if
+        и использовать useEffect с зависимостью на kw*/}
+
+        {/* <Route path="/PricePage/kw" element={<PricePage kw/>} /> */}
         <Route path="/AboutMe" element={<AboutMe />} />
         <Route path="/MyWorks" element={<MyWorks />} />
         <Route path="/MyServices" element={<MyServices />} />
