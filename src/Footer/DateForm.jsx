@@ -5,6 +5,12 @@ import { getElectricityPrice, getGasPrice } from '../services/apiServices';
 import { setElectricityPrice, setErrorMessage, setGasPrice } from '../services/stateService';
 import { useDispatch } from 'react-redux';
 
+//компоненты принимают один аргумент - это property object, в нем хранятся все значения, которые мы откуда-то передали в компонент
+//EXAMPLE
+//Component <props1={1} props2={2}/>. Property передаются в компонент как атрибуты в html
+//внутри компонента propery менять невозможно 
+//property могут быть любым типом данных, которые существуют в nodeJs
+// есть одно забронированное имя property - CHILDREN. В него записываются все элементы, переданные внутри компонента
 function DateForm({ hideSideBar }) {
     const dispatch = useDispatch();
 
