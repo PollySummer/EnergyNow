@@ -8,6 +8,10 @@ import Contact from './Contact';
 import PricePage from './Prices/PricePage';
 import { Routes, Route } from 'react-router-dom';
 import useGetData from './effects/useGetData';
+import AboutMe from './Contact/AboutMe';
+import MyWorks from './Contact/MyWorks';
+import ContactFooter from './Contact/ContactFooter';
+import MyServices from './Contact/MyServices';
 
 function App() {
 
@@ -31,6 +35,10 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/PricePage" element={<PricePage />} />
         <Route path="/PricePage/kw" element={<PricePage />} />
+        <Route path="/AboutMe" element={<AboutMe />} />
+        <Route path="/MyWorks" element={<MyWorks />} />
+        <Route path="/MyServices" element={<MyServices />} />
+        <Route path="/ContactFooter" element={<ContactFooter />} />
       </Routes>
       <ErrorModal />
     </Container>

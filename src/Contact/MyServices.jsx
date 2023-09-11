@@ -30,7 +30,7 @@ function MyServices() {
                         <Card.Body>
                             <Card.Title>{card.title}</Card.Title>
                             <Card.Text>{card.text}</Card.Text>
-                            <a className='nav-link' href='/'>Learn more</a>
+                            <a className='nav-link' href='/AboutMe'>Learn more</a>
                         </Card.Body>
                     </Card>
                 ))}

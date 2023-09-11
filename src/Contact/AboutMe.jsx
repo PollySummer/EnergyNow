@@ -1,6 +1,8 @@
 import Image from 'react-bootstrap/Image';
-
+import { useNavigate } from 'react-router-dom';
 function AboutMe() {
+    const navigate = useNavigate();
+
     return (
         <div className='aboutMe w-75 m-auto mt-5'>
             <Image className='aboutMePhoto rounded' src="/mainPhoto2.JPG" />
@@ -11,9 +13,9 @@ function AboutMe() {
                 P.S. I also good in understanding programming memes :)
             </p>
             <div className="buttons d-flex justify-content-center m-3">
-                <button className='aboutBtn'>Skills</button>
-                <button className='aboutBtn'>Experience</button>
-                <button className='aboutBtn'>Education</button>
+                <button className='aboutBtn' onClick={() => navigate('/MyWorks')}>My Works</button>
+                <button className='aboutBtn' onClick={() => navigate('/MyServices')}>Services</button>
+                <button className='aboutBtn' onClick={() => navigate('/ContactFooter')}>Contacts</button>
             </div>
 
         </div>
