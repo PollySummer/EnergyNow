@@ -1,5 +1,8 @@
 import MainIfo from "./MainInfo";
 import AboutMe from "./AboutMe";
+import MyServices from './MyServices';
+import MyWorks from './MyWorks';
+import ContactFooter from './ContactFooter';
 import './style.scss'
 
 function Contact() {
@@ -7,6 +10,9 @@ function Contact() {
         <>
         <MainIfo/>
         <AboutMe/>
+        <MyServices/>
+        <MyWorks/>
+        <ContactFooter/>
         </>
     );
 }

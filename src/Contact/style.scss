@@ -1,21 +1,10 @@
 $standart-margin: 30px;
 
-.mainInfo {
-    background: rgb(238, 174, 202);
-    background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-}
-
 .mainPhoto {
     width: 18%;
     margin: $standart-margin;
     border: 3px rgb(240, 182, 250) solid;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.mainText {
-    font-size: 1.3em;
-    line-height: 1.5em;
-    text-align: center;
 }
 
 .aboutMePhoto {
