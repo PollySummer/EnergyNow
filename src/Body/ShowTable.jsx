@@ -23,7 +23,7 @@ function ShowTable(props) {
     return (
         <>
             <ButtonGroup className='my-5'>
-                <Button onClick={() => setTableOrChart(true)}>
+                <Button  onClick={() => setTableOrChart(true)}>
                     Table
                 </Button>
                 <Button onClick={() => setTableOrChart(false)}>
