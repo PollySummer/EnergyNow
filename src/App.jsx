@@ -14,16 +14,13 @@ import ContactFooter from './Contact/ContactFooter';
 import MyServices from './Contact/MyServices';
 
 function App() {
-
   useGetData();
-
   const mainPage = (
     <>
       <Body />
       <Footer />
     </>
   );
-
   return (
     <Container>
       <Navigation />
