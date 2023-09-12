@@ -33,8 +33,6 @@ function DateForm({ hideSideBar }) {
         } finally {
             hideSideBar();
         }
-        console.log(from, to);
-
     };
 
     return (

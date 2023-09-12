@@ -29,7 +29,6 @@ const useGetData = () => {
 
     useEffect(() => {
         getCurrentGasPrice().then(data => {
-            console.log('current gas', data);
             if (!data.success) {
                 throw data.messages[0];
             }
