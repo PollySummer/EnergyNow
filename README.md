@@ -27,4 +27,20 @@ The app is written in the **JavaScript** programming language using the **react 
 
 ## How to use app:
 Here you can choose what you want to see: gas or electricity: 
-![button electricity/gas]()
+![button electricity/gas](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/eleSwitch.png)
+
+And also you can choose how to watch information: in table or chart. You can do this here: 
+![button table or chart](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/chartOrTable.png)
+
+You can watch current price for gas or electricity here:
+![current price](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/CurrentPrice.png)
+
+And watch if price is low or hight:
+![price identificator](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/Price.png)
+
+Under table and chart you have this buttons:
+![date buttons](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSwitcher.png)
+It switch dates and there you can tap `Custom` to choose date which you need.
+
+Then you can choose date here:
+![date search](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSearch.png)
