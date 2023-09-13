@@ -1,5 +1,5 @@
-# What is Electricity App?
-This project was inspired by  [Electrikell.ee](https://www.elektrikell.ee/).
+# Visit site!
+
 ## Our benefits:
  * You can watch also gas price
 
