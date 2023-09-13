@@ -26,21 +26,21 @@ The app is written in the **JavaScript** programming language using the **react 
 * And finally write `npm start` and project will setup in your browser!
 
 ## How to use app:
-Here you can choose what you want to see: gas or electricity: 
-![button electricity/gas](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/eleSwitch.png)
+Here you can choose what you want to see: gas or electricity: <br/>
+![button electricity/gas](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/eleSwitch.png) <br/>
 
-And also you can choose how to watch information: in table or chart. You can do this here: 
-![button table or chart](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/chartOrTable.png)
+And also you can choose how to watch information: in table or chart. You can do this here: <br/>
+![button table or chart](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/chartOrTable.png) <br/>
 
-You can watch current price for gas or electricity here:
-![current price](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/CurrentPrice.png)
+You can watch current price for gas or electricity here: <br/>
+![current price](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/CurrentPrice.png) <br/>
 
-And watch if price is low or hight:
-![price identificator](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/Price.png)
+And watch if price is low or hight: <br/>
+![price identificator](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/Price.png) <br/>
 
-Under table and chart you have this buttons:
-![date buttons](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSwitcher.png)
-It switch dates and there you can tap `Custom` to choose date which you need.
+Under table and chart you have this buttons: <br/>
+![date buttons](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSwitcher.png) <br/>
+It switch dates and there you can tap `Custom` to choose date which you need. <br/>
 
-Then you can choose date here:
-![date search](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSearch.png)
+Then you can choose date here: <br/>
+![date search](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSearch.png) <br/>
