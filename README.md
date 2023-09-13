@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# What is Electricity App?
+This project was inspired by  [Electrikell.ee](https://www.elektrikell.ee/).
+## Our benefits:
+ * You can watch also gas price
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 

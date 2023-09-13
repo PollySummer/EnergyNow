@@ -17,8 +17,9 @@ function Price() {
 
     return (
         <>
+        <h3 className="mb-2">Current price:</h3>
             <h3>{activeEnergy === ELECTR ? currentPrice : parseFloat(gasCurrentPrice).toFixed(2)}</h3>
-            <div>sents/kw</div>
+            <div>{activeEnergy === ELECTR ? 'sents/kw' : 'm³'}</div>
         </>
     )
 }

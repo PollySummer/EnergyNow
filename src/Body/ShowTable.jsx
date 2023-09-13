@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import PriceTable from './PriceTable';
 import Chart from './Chart';
-import { ButtonGroup } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
+import ToggleButton from 'react-bootstrap/ToggleButton';
 
 // {activeEnergy, electricityPrice,setElectricityPrice,gasPrice,setGasPrice}
 function ShowTable(props) {
@@ -21,17 +21,27 @@ function ShowTable(props) {
         }
     }, [dataType]);
     return (
-        <>
-            <ButtonGroup className='my-5'>
-                <Button  onClick={() => setTableOrChart(true)}>
-                    Table
-                </Button>
-                <Button onClick={() => setTableOrChart(false)}>
+        <div className='my-5'>
+            <ToggleButtonGroup type="radio" name="options" defaultValue={1}>
+                <ToggleButton 
+                onClick={() => setTableOrChart(false)} 
+                id="tbg-radio-1" 
+                variant="outline-success"
+                value={1}>
+                    
                     Chart
-                </Button>
-            </ButtonGroup>
+                </ToggleButton>
+
+                <ToggleButton 
+                onClick={() => setTableOrChart(true)} 
+                id="tbg-radio-2" 
+                variant="outline-success"
+                value={2}>
+                    Table
+                </ToggleButton>
+            </ToggleButtonGroup>
             {tableOrChart ? table : chart}
-        </>
+        </div>
     );
 }
 export default ShowTable;

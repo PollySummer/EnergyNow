@@ -50,7 +50,7 @@ function PriceTable() {
     }, [electricityPrice, gasPrice, activeEnergy]);
 
     return (
-        <Table striped bordered hover>
+        <Table striped bordered hover className='mt-5'>
             <thead>
                 <tr>
                     <th>#</th>
