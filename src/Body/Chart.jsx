@@ -38,8 +38,8 @@ function Chart() {
     }, [electricityPrice, gasPrice, activeEnergy]);
 
     return (
-        <div className='chartsContainer'>
-            <ResponsiveContainer height='100%' width='100%'>
+        <div className='chartsContainer d-flex d-flex justify-content-center mb-5 ' >
+            <ResponsiveContainer height='110%' width='75%' className='bg-white'>
                 <LineChart
                     data={chartData}
                 >

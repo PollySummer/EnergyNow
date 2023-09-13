@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { store } from './services/stateService';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import { mainUrl } from './Body/consts';
 
 //React and ReactDOM это два npm пакета, которые и формируют сам react
 //reactDOM с помощью webpack перерабатывает все наши компоненты, написанные в react и отправляет это все в div
@@ -19,7 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 //для работы с редакс в реакте нужен доп. модуль - react-redux
 root.render(
-    <BrowserRouter>
+    <BrowserRouter basename={mainUrl}>
         <Provider store={store}>
             <App />
         </Provider>

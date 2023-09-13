@@ -23,14 +23,13 @@ function Switcher() {
     return (
         <>
             <ButtonGroup>
-                <Button className='text-capitalize'
-                    variant="secondary"
+                <Button className='text-capitalize buttons'
+                    variant="outline-success"
                     onClick={() => navigate('/electricity')}
                     active={activeEnergy === ELECTR}
-
                 >{ELECTR}</Button>
                 <Button className='text-capitalize'
-                    variant="secondary"
+                    variant="outline-success"
                     onClick={() => navigate('/gas')}
                     active={activeEnergy === GAS}
                 >{GAS}</Button>

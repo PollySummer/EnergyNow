@@ -13,9 +13,6 @@ import MyWorks from './Contact/MyWorks';
 import ContactFooter from './Contact/ContactFooter';
 import MyServices from './Contact/MyServices';
 
-//компонент это функция, которая возвращает ОДИН элемент и только один!
-//КОМПОНЕНТЫ называются с большой буквы, что бы их можно было отличить от ЭЛМЕНТОВ в jsx
-//JSX - новый синтаксис от реакт, который позволяет писать node.js внутри html
 
 function App() {
   useGetData();
@@ -26,17 +23,6 @@ function App() {
     </>
   );
 
-//ссылки в реакт-роутер-дом называюся маршрут или "rout"
-//у каждого маршрута есть свой путь (path) и элемент, который должен запуститься
-//при изменении ссылки компонент, который был отрисован, react-router-dom запускает процесс unmount компонента
-//и новый компонент запускает процесс unmount
-// мы можем передать любую инфу в компонент через ссылки. Это назыв. поисковые параметры (search params)
-//в классическом виде: http://neti.ee?dataType=electricity
-//в react-router-dom можно создать читабельные ссылки и через / передать нкжную инфу
-//example: neti.ee/electricity
-//значение electricity запишется в назначенный нам param через :{paramName}
-//в нашем случае новый парам dataType с знач 'ele'
-
   return (
     <Container>
       <Navigation />
@@ -44,6 +30,8 @@ function App() {
         <Route path="/" element={mainPage} />
         <Route path="/gas" element={mainPage} />
         <Route path="/gas/:dataType" element={mainPage} />
+        <Route path='/ele' element={mainPage} />
+        <Route path='/ele/:dataType' element={mainPage} />
         <Route path="/electricity" element={mainPage} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/PricePage" element={<PricePage />} />

@@ -1,4 +1,7 @@
-$priceColor: red;
+$priceColor: #B5D99C;
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 
 .chartsContainer {
     height: 500px;
@@ -6,4 +9,14 @@ $priceColor: red;
 
 .now > td {
     background-color: $priceColor;
+}
+.navigate{
+    background-color: #e5f1dc;
+    font-size: 1.1em;
+    border-radius: 5px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.main-link{
+    font-size: 1.3em;
+    font-weight: bold;
 }

@@ -15,9 +15,9 @@ function Periods({ setShowSideBar }) {
             {
                 PERIODS.map(({ label, value }) =>
                     <Button
-                        className='mx-2'
+                        className='mx-2 mt-4'
                         key={value}
-                        variant='primary'
+                        variant="success"
                         active={selectedPeriod === value}
                         onClick={() => dispatch(setSelectedPeriod(value))}
                     >
@@ -26,12 +26,18 @@ function Periods({ setShowSideBar }) {
             }
 
             <Button
-                className='mx-2'
-                variant='primary'
+                className='mx-2 mt-4'
+                variant="success"
                 onClick={() => setShowSideBar(true)}
             >
                 Custom
             </Button>
+            <div className='text-center p-4 m-5'>
+                © 2023 All rights reserved
+                <a className='nav-link' href='/'>
+                    ReactApp | EnergyToday
+                </a>
+            </div>
         </Container>
     );
 }
