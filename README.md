@@ -1,5 +1,5 @@
 # Visit site!
-
+![alt text] (https://github.com/PollySummer/electricity/blob/master/public/readmeImg/eleSwitch.png)
 ## Our benefits:
  * You can watch also gas price
 
