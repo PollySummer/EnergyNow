@@ -35,7 +35,7 @@ And also you can choose how to watch information: in table or chart. You can do 
 You can watch current price for gas or electricity here: 
 ![current price](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/CurrentPrice.png)
 
-And watch if price is low or hight: 
+And watch if price is low or hight: <br/>
 ![price identificator](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/Price.png) 
 
 Under table and chart you have this buttons: 
