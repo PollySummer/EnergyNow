@@ -28,6 +28,8 @@ function App() {
         <Route path="/" element={mainPage} />
         <Route path="/gas" element={mainPage} />
         <Route path="/gas/:dataType" element={mainPage} />
+        <Route path='/ele' element={mainPage} />
+        <Route path='/ele/:dataType' element={mainPage} />
         <Route path="/electricity" element={mainPage} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/PricePage" element={<PricePage />} />
