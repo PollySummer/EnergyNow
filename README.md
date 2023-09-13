@@ -39,7 +39,7 @@ And watch if price is low or hight: <br/>
 ![price identificator](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/Price.png) 
 
 Under table and chart you have this buttons: 
-![date buttons](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSwitcher.png)
+![date buttons](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/dateSwitcher.png) <br/>
 It switch dates and there you can tap `Custom` to choose date which you need.
 
 Then you can choose date here:
