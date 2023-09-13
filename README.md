@@ -1,5 +1,5 @@
 # Visit EnergyToday now!
-###Here how it looks:
+### Here how it looks:
 ![Main Page](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/mainPage.png)
 ### You can visit site here: https://pollysummer.github.io/electricity/ <br/>
 
@@ -26,3 +26,5 @@ The app is written in the **JavaScript** programming language using the **react 
 * And finally write `npm start` and project will setup in your browser!
 
 ## How to use app:
+Here you can choose what you want to see: gas or electricity: 
+![button electricity/gas]()
