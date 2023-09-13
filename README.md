@@ -27,7 +27,7 @@ The app is written in the **JavaScript** programming language using the **react 
 
 ## How to use app:
 Here you can choose what you want to see: gas or electricity: 
-![button electricity/gas](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/eleSwitch.png)
+![button electricity/gas](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/eleSwitch.png) <br/>
 
 And also you can choose how to watch information: in table or chart. You can do this here: 
 ![button table or chart](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/chartOrTable.png)
