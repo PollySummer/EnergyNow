@@ -10,6 +10,11 @@ This application will help you view the *price of electricity* in countries such
 You can also view *gas* prices in Finland and the current *gas* price in Estonia.<br/>
 In my application, you can *select the period* you need to view prices and view it in the form of a* graph or table.*<br/>
 
+### Project consists of two more parts. You can navigate them throught navbar.
+* ### About me:
+  Here you can view some info about me:
+  [About Me page]()
+
 
 ## Such tools were used:
 The app is written in the **JavaScript** programming language using the **react library**, as well as: <br/>
