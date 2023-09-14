@@ -22,7 +22,7 @@ function PricePage() {
     return (
         <>
             <h2>{pathname === '/PricePage/kw' ? 'Electricity price with tax:' : 'Electricity normal price'}</h2>
-            <h2>{electricityWithTax}</h2>
+            <h2>{pathname === '/PricePage/kw' ? electricityWithTax : currentPrice}</h2>
             <div>sents/kw</div>
             <h2>{pathname === '/PricePage/kw' ? 'Gas price with tax:' : 'Gas normal price'}</h2>
             <h2>{pathname === '/PricePage/kw' ? gasPriceWithTax : gasCurrentPrice}</h2>
