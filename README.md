@@ -13,8 +13,9 @@ In my application, you can *select the period* you need to view prices and view 
 ### Project consists of two more parts. You can navigate them throught navbar.
 * ### About me:
   Here you can view some info about me:
-  [About Me page]()
-
+  ![About Me page](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/aboutMe.png)
+And here you can view current price for gas and electricity with or without taxes:
+![Prices Page](https://github.com/PollySummer/electricity/blob/master/public/readmeImg/PricesPage.png)
 
 ## Such tools were used:
 The app is written in the **JavaScript** programming language using the **react library**, as well as: <br/>
