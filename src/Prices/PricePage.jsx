@@ -26,10 +26,10 @@ function PricePage() {
     return (
         <div className="d-flex flex-column align-items-center">
             <h2>{pathname === '/PricePage/kw' ? 'Electricity price with tax:' : 'Electricity normal price'}</h2>
-            <h2 className="mt-2">{pathname === '/PricePage/kw' ? electricityWithTax : currentPrice}</h2>
+            <h2 className="mt-2">{pathname === '/PricePage/kw' ? parseFloat(electricityWithTax).toFixed(2) : currentPrice}</h2>
             <div className="mb-5">sents/kw</div>
             <h2>{pathname === '/PricePage/kw' ? 'Gas price with tax:' : 'Gas normal price'}</h2>
-            <h2>{pathname === '/PricePage/kw' ? gasPriceWithTax : gasCurrentPrice}</h2>
+            <h2>{pathname === '/PricePage/kw' ? parseFloat(gasPriceWithTax).toFixed(2) : parseFloat(gasCurrentPrice).toFixed(2)}</h2>
             <div className="mb-5">m³</div>
 
 
