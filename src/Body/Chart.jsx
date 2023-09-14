@@ -31,7 +31,7 @@ function Chart() {
 
         const data = energy[activeEnergy].data.map(data =>
         ({
-            ...data, interval: moment.unix(data.timestamp).format(energy[activeEnergy].format)
+            ...data, interval: parseInt(moment.unix(data.timestamp).format(energy[activeEnergy].format))
         })
         )
         setChartData(data);
