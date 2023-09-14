@@ -24,6 +24,7 @@ The app is written in the **JavaScript** programming language using the **react 
 * Reacr-router
 * SASS
 * React library Moment
+* React library Recharts
 
 ## How to run project:
 * First of all you need to clone tre repository6 using Git. You can do it on my [GitHub profile](https://github.com/PollySummer/electricity).
